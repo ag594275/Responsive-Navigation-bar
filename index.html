@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Responsive Navigation menu</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <div class="group">
+            <ul class="navigation">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Service</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="search">
+                <span class="icon">
+                    <ion-icon name="search" class="searchbtn"></ion-icon>
+                    <ion-icon name="close" class="closebtn"></ion-icon>
+                </span>
+            </div>
+            <ion-icon name="menu-outline" class="menuToggle"></ion-icon>
+        </div>
+        <div class="searchbox">
+            <input type="text" placeholder="Search here...">
+        </div>
+    </header>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        let searchbtn=document.querySelector('.searchbtn');
+        let closebtn=document.querySelector('.closebtn');
+        let searchbox=document.querySelector('.searchbox');
+        let navigation=document.querySelector('.navigation');
+        let menuToggle=document.querySelector('.menuToggle');
+        let header=document.querySelector('header');
+        searchbtn.onclick=function(){
+            searchbox.classList.add('active');
+            closebtn.classList.add('active');
+            searchbtn.classList.add('active');
+            menuToggle.classList.add('hide');
+            header.classList.remove('open');
+        }
+        closebtn.onclick=function(){
+            searchbox.classList.remove('active');
+            closebtn.classList.remove('active');
+            searchbtn.classList.remove('active');
+            menuToggle.classList.remove('hide');
+        }
+        menuToggle.onclick=function(){
+            header.classList.toggle('open');
+            searchbox.classList.remove('active');
+            closebtn.classList.remove('active');
+            searchbtn.classList.remove('active');
+            
+        }
+
+    </script>
+</body>
+</html>
